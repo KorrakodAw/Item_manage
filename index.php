@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Equipment</title>
     <link rel="stylesheet" href="style.css">
-  
+
 </head>
+
 <body>
 
     <!-- เรียกใช้งาน Navbar -->
@@ -16,6 +18,9 @@
     <div class="container">
         <h1>เพิ่มข้อมูลอุปกรณ์</h1>
         <form action="add_equipment.php" method="POST">
+            <label for="id">เลขครุภัณฑ์:</label>
+            <input type="text" name="id" value="<?php echo $row['id']; ?>" required>
+
             <label for="equipment_name">ชื่ออุปกรณ์:</label>
             <input type="text" id="equipment_name" name="equipment_name" required>
 
@@ -30,4 +35,5 @@
     </div>
 
 </body>
+
 </html>

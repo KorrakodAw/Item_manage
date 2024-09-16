@@ -17,7 +17,7 @@
         <h1>การเช่า/ยืม อุปกรณ์</h1>
         <form action="rent_equipment_process.php" method="POST">
             <label for="id">ID อุปกรณ์:</label>
-            <input type="number" id="id" name="id" required>
+            <input type="text" id="id" name="id" required>
 
             <label for="quantity_rented">จำนวนที่ต้องการเช่า:</label>
             <input type="number" id="quantity_rented" name="quantity_rented" required>

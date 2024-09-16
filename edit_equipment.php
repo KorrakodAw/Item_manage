@@ -40,7 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <h1>แก้ไขข้อมูลอุปกรณ์</h1>
         <form method="POST" action="edit_equipment.php">
-            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+            <label for="id">เลขครุภัณฑ์:</label>
+            <input type="text" name="id" value="<?php echo $row['id']; ?>" required>
 
             <label for="equipment_name">ชื่ออุปกรณ์:</label>
             <input type="text" name="equipment_name" value="<?php echo $row['equipment_name']; ?>" required>
@@ -54,12 +55,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="submit" value="ยืนยันการแก้ไข">
         </form>
     </div>
-    <?php if ($conn->query($sql) === TRUE) {
-        echo "ข้อมูลถูกแก้ไขแล้ว!";
-        echo "<br><a href='view_equipment.php'><button>กลับหน้ารายการอุปกรณ์</button></a>";
+    <?php
+    if ($conn->query($sql) === TRUE) {
+        echo '<script type="text/javascript">
+        window.onload = function () { 
+            alert("ข้อมูลถูกแก้ไขแล้ว!");
+            window.location.href = "view_equipment.php";
+        }
+    </script>';
     } else {
         echo "" . $conn->error;
-    } ?>
+    }
+    ?>
 </body>
 
 </html>
