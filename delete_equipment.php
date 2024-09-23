@@ -9,11 +9,16 @@ if (isset($_GET['id'])) {
     // SQL สำหรับการลบข้อมูล
     $sql = "DELETE FROM equipment WHERE id = $id";
 
+
     if ($conn->query($sql) === TRUE) {
-        echo "Equipment deleted successfully!";
-        echo "<br><a href='view_equipment.php'><button>กลับหน้ารายการอุปกรณ์</button></a>";
+        echo '<script type="text/javascript">
+        window.onload = function () { 
+            alert("ข้อมูลถูกลบแล้ว!");
+            window.location.href = "view_equipment.php";
+        }
+    </script>';
     } else {
-        echo "Error deleting record: " . $conn->error;
+        echo "" . $conn->error;
     }
 }
 

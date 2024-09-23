@@ -13,13 +13,12 @@
 <body>
 
     <!-- เรียกใช้งาน Navbar -->
-    <?php include 'navbar.php'; ?>
+    <?php include 'navbar.php' ?>
 
     <div class="container">
         <h1>เพิ่มข้อมูลอุปกรณ์</h1>
         <form action="add_equipment.php" method="POST">
-            <label for="id">เลขครุภัณฑ์:</label>
-            <input type="text" name="id" value="<?php echo $row['id']; ?>" required>
+            <input type="hidden" name="id" value="<?php echo $row['id']; ?>" >
 
             <label for="equipment_name">ชื่ออุปกรณ์:</label>
             <input type="text" id="equipment_name" name="equipment_name" required>
